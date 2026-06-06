@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Telegram Club</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b1528;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #16223f, #0d1b35);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 30px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .profile-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 25px auto;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00d2ff;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 26px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .badge {
+            background-color: rgba(0, 210, 255, 0.1);
+            color: #00d2ff;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .features-list li {
+            color: #b0c4de;
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timer-text {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        #countdown {
+            color: #00d2ff;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 5px;
+        }
+
+        .btn-join {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            margin-bottom: 25px;
+        }
+
+        .btn-join:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-join:hover {
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            color: #557093;
+            font-size: 12px;
+        }
+
+        .footer-text a {
+            color: #00d2ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-container">
+            <img src="https://img.sanishtech.com/u/b1694766e748d2645c76b1f9bc8ae88b.jpeg" alt="TEAM YOUNG GOAT" class="profile-pic" id="profileImg" loading="lazy">
+        </div>
+
+        <h1 id="userName">TEAM YOUNG GOAT 🥷💸</h1>
+
+        <div class="badge">🔥 PREMIUM TELEGRAM CLUB 🔥</div>
+
+        <ul class="features-list">
+            <li>💸 Daily Winning Updates</li>
+            <li>🚀 Instant Telegram Access</li>
+            <li>🏆 Trusted Premium Community</li>
+        </ul>
+
+        <div class="timer-text">
+            Redirecting in <span id="countdown">3</span> sec...
+        </div>
+
+        <a href="https://t.me/+7pC3S-2mK5ZmZmU1" class="btn-join" id="tgLink">
+            🚀 JOIN TELEGRAM NOW
+        </a>
+
+        <div class="footer-text">
+            Ads Managed by <a href="#" id="footerUser">@adspikedigital.in</a>
+        </div>
+    </div>
+
+    <script>
+        // आपका टेलीग्राम लिंक (इसे आप कभी भी बदल सकते हैं)
+        const telegramURL = "https://t.me/+7pC3S-2mK5ZmZmU1"; 
+        let timeLeft = 3; 
+        
+        const countdownElement = document.getElementById('countdown');
+
+        const downloadTimer = setInterval(function(){
+            timeLeft--;
+            if (timeLeft >= 0) {
+                countdownElement.textContent = timeLeft;
+            }
+            if(timeLeft <= 0){
+                clearInterval(downloadTimer);
+                window.location.href = telegramURL; // ऑटोमैटिक रीडायरेक्ट लॉजिक
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
